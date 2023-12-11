@@ -5,8 +5,8 @@ int main(int argc,char **argv){
 	ros::init(argc,argv,"pan_order_po");
 
     OrderClass po;
-    ros::spin();
-    // po.mainloop();
+    // ros::spin();
+    po.mainloop();
 
 	return 0;
 }
