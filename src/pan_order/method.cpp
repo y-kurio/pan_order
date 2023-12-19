@@ -20,7 +20,7 @@ void OrderClass::__tilt_angle_callback(const std_msgs::Float64& msg)
 
 void OrderClass::mainloop()
 {
-    ros::Rate loop_rate(1);
+    ros::Rate loop_rate(50);
 	while (ros::ok())
 	{
         __riskobject();
@@ -50,9 +50,9 @@ void OrderClass::__pantilt_order()
     // pubPanData_.id = camera_angle_.id;
     // pubPanData_.position = int((most_Cluster_theta_*11.6) + 2048);
     pubtiltData_.id = 1;
-    pubtiltData_.position = int((most_Cluster_theta_pan_*11.6) + 2048);
+    pubtiltData_.position = int((most_Cluster_theta_tilt_*11.6) + 2048);
     pubPanData_.id = 2;
-    pubPanData_.position = int((most_Cluster_theta_tilt_*11.6) + 2048);
+    pubPanData_.position = int((most_Cluster_theta_pan_*11.6) + 2048);
 }
 
 void OrderClass::__publish()
